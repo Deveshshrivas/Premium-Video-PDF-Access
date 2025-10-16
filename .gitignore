@@ -1,0 +1,83 @@
+# Operating system
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs
+
+# Node modules (all folders)
+**/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+pip-wheel-metadata/
+*.egg-info/
+
+# Build / distribution
+**/dist/
+**/build/
+coverage/
+coverage.xml
+*.egg
+*.whl
+
+# Environment / secrets (all .env files)
+**/.env
+**/.env.local
+**/.env.*.local
+*.secret
+secrets.json
+
+# Logs and databases
+*.log
+*.sqlite3
+*.db
+
+# Temp files
+tmp/
+temp/
+*.tmp
+
+# Binaries
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Misc
+*.bak
+*.swp
+
+# Next.js
+**/.next/
+**/out/
+
+# Vite
+**/dist-ssr/
+*.local
+
+# IMPORTANT: Never commit encrypted files or uploads!
+**/uploads/
+**/chunks/
+*.enc
+*.meta
+
+# Stripe CLI
+.stripe/
