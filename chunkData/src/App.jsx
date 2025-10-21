@@ -6,11 +6,7 @@ import PDFViewer from './components/PDFViewer';
 import PricingModal from './components/PricingModal';
 
 const CHUNK_SIZE = 1024 * 1024; // 1MB
-<<<<<<< HEAD
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
-=======
-const API_URL = 'https://premium-video-pdf-access-1u8j.vercel.app/';
->>>>>>> 58b8f18bafa4f185ed9a42827dda78787eaeaa24
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
