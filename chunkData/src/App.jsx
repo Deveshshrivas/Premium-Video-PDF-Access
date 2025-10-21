@@ -6,7 +6,7 @@ import PDFViewer from './components/PDFViewer';
 import PricingModal from './components/PricingModal';
 
 const CHUNK_SIZE = 1024 * 1024; // 1MB
-const API_URL = 'http://localhost:3002';
+const API_URL = 'https://premium-video-pdf-access-1u8j.vercel.app/';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
