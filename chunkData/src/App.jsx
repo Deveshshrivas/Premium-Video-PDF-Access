@@ -6,7 +6,7 @@ import PDFViewer from './components/PDFViewer';
 import PricingModal from './components/PricingModal';
 
 const CHUNK_SIZE = 1024 * 1024; // 1MB
-const API_URL = 'http://localhost:3002';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

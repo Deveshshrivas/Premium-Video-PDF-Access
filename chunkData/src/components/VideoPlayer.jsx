@@ -15,10 +15,12 @@ export default function VideoPlayer({ fileId, fileName, user, onUpgradeClick }) 
   
   // Check if user has premium subscription
   const isPremium = user?.subscription?.status === 'active' || user?.subscription?.status === 'trialing';
-  const TIME_LIMIT = isPremium ? Infinity : 10; // Unlimited for premium, 10 seconds for free
+  const FREE_VIDEO_LIMIT = parseInt(import.meta.env.VITE_FREE_VIDEO_LIMIT) || 10;
+  const TIME_LIMIT = isPremium ? Infinity : FREE_VIDEO_LIMIT;
 
   // Stream URL directly from server (no blob URL to prevent bypass)
-  const streamUrl = `http://localhost:3002/api/stream?fileId=${fileId}`;
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+  const streamUrl = `${API_URL}/api/stream?fileId=${fileId}`;
 
   useEffect(() => {
     const video = videoRef.current;

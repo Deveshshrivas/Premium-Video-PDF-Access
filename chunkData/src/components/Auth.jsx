@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './Auth.css';
 
-const API_URL = 'http://localhost:3002';
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
 
 export default function Auth({ onLogin }) {
   const [isLogin, setIsLogin] = useState(true);

@@ -10,10 +10,12 @@ export default function PDFViewer({ fileId, fileName, user, onUpgradeClick }) {
 
   // Check if user has premium subscription
   const isPremium = user?.subscription?.status === 'active' || user?.subscription?.status === 'trialing';
-  const PAGE_LIMIT = isPremium ? Infinity : 5; // 5 pages for free, unlimited for premium
+  const FREE_PDF_LIMIT = parseInt(import.meta.env.VITE_FREE_PDF_LIMIT) || 5;
+  const PAGE_LIMIT = isPremium ? Infinity : FREE_PDF_LIMIT;
 
   // Stream URL directly from server (no blob URL to prevent extraction)
-  const pdfUrl = `http://localhost:3002/api/stream?fileId=${fileId}`;
+  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3002';
+  const pdfUrl = `${API_URL}/api/stream?fileId=${fileId}`;
 
   useEffect(() => {
     // Load PDF.js library dynamically
